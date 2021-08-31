@@ -1,3 +1,4 @@
+
 .product {
     display: flex;
     flex-direction: column;
@@ -22,7 +23,7 @@
     object-fit: contain;
     margin-bottom: 15px;
 }
-  
+
 .product > button {
     background: #f0c14b;
     border: 1px solid;
@@ -38,4 +39,4 @@
 .product__info {
     height: 100px;
     margin-bottom: 15px;
-}
+} 
