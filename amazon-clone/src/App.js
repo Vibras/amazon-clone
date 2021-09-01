@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home.js";
 import Header from "./Header.js";
-import Login from './Login';
+import Login from './Login.js';
 import Checkout from "./Checkout.js";
 // import { auth } from "./firebase";
 
@@ -11,25 +11,27 @@ function App() {
   
 
   return (
-    <div className="app">
-      <Router>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
+    // BEM
+    <Router>
+      <div className="app">
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
+            <Route path="/checkout">
+              <Header />
+              <Checkout />
+            </Route>
+            
+            <Route path="/">
+              <Header />
+              <Home />
+            </Route>
 
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>
-        </Switch>
+          </Switch>
+      </div>
     </Router>
-    </div>
   );
 }
 
