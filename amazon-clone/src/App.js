@@ -6,6 +6,7 @@ import Header from "./Header.js";
 import Login from './Login.js';
 import Checkout from "./Checkout.js";
 import Payment from "./Payment.js";
+import Orders from "./Orders";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider.js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -40,35 +41,40 @@ function App() {
   }, []);
 
   return (
-    // BEM
     <Router>
       <div className="app">
-          <Switch>
-            <Route path="/login">
-              <Login />
-            </Route>
+        <Switch>
+          
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
 
-            <Route path="/checkout">
-              <Header />
-              <Checkout />
-            </Route>
-            
-            <Route path="/payment">
-              <Header />
-              <Elements stripe={promise}>
-                <Payment />
-              </Elements>
-            </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
 
-            <Route path="/">
-              <Header />
-              <Home />
-            </Route>
+          <Route path="/checkout">
+            <Header />
+            <Checkout />
+          </Route>
 
-          </Switch>
+          <Route path="/payment">
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+          </Route>
+
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+
+        </Switch>
       </div>
     </Router>
   );
 }
 
-export default App;
+export default App

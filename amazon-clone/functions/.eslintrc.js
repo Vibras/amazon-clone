@@ -5,8 +5,9 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
+    "eslint: recommended",
     "google",
+    "plugin: react/recommended",
   ],
   rules: {
     quotes: ["error", "double"],
